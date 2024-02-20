@@ -19,36 +19,35 @@
     </nav>
   </header>
 
-</body>
+  <div class="container">
+    <h1 class="h1-style">QRコードメーカー</h1>
+    
+    <div class="qrblock">
+      <p class="qrcomment">QRコードで生成したい文字列を入力してください。</p>
+      <p>
+        <input id="isbn" type="text" name="isbn" value="">
+      </p>
+      <p class="qrcomment">QRコードの大きさを選択、または入力してください。</p>
+      <p>
+        <button id="100" type="button" name="button" >100px</button>
+        <button id="240" type="button" name="button" >240px</button>
+        <button id="500" type="button" name="button" >500px</button>
+      </p>
+      <p>
+        <input id="size" type="number" name="" pattern="\d*" onpaste="return false" value="" placeholder="size(px)">
+        <button id="getqrInfo" class="btn btn-default">QRコードを生成</button>
+      </p>
+    </div>
 
-<body>
-  <h1 class="h1-style">QRコードメーカー</h1>
-  
-  <div class="qrblock">
-    <p class="qrcomment">QRコードで生成したい文字列を入力してください。</p>
-    <p>
-      <input id="isbn" type="text" name="isbn" value="">
-    </p>
-    <p class="qrcomment">QRコードの大きさを選択、または入力してください。</p>
-    <p>
-      <button id="100" type="button" name="button" >100px</button>
-      <button id="240" type="button" name="button" >240px</button>
-      <button id="500" type="button" name="button" >500px</button>
-    </p>
-    <p>
-      <input id="size" type="number" name="" pattern="\d*" onpaste="return false" value="" placeholder="size(px)">
-      <button id="getqrInfo" class="btn btn-default">QRコードを生成</button>
-    </p>
+    <div id="qrOutput">
+      <canvas id="qr"></canvas>
+      <a id="link" class="hidden"></a>
+      <p>
+        <button id="down" class="hidden" type="button" onclick="download()">Download</button>
+      </p>
+    </div>  
+    <footer>Reference:<a class="footer-a" href="https://github.com/neocotic/qrious">QRious</a></footer>
   </div>
-
-  <div id="qrOutput">
-    <canvas id="qr"></canvas>
-    <a id="link" class="hidden"></a>
-    <p>
-      <button id="down" class="hidden" type="button" onclick="download()">Download</button>
-    </p>
-  </div>
-  <h6 style="text-align: right;">Reference:QRious</h6>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.js"></script>
